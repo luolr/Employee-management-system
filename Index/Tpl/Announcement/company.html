@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>公司公告</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/announcement.css"/>
+    <link href="__PUBLIC__/css/jquery.qeditor.css" rel="stylesheet">
+    <link href="http://cdn.staticfile.org/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jPages.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.qeditor.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/myJquery.js"></script>
+
+
+</head>
+<body>
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+        <div class="currentPage"><i></i>您当前的位置：<a href="../Index/index.html">首页</a> > 公司公告</div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+
+                <h3>公司公告</h3>
+
+                <ul class="content-box-tabs">
+                    <li id="one"><a href="#tab1" class="default-tab current" style="text-decoration: none;">列表</a></li>
+                    <li id="two"><a href="#tab2" class="" style="text-decoration: none;">发布</a></li>
+                </ul>
+
+            </div>
+            <div class="content-box-content">
+
+                <div class="tab-content default-tab" id="tab1">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>公告标题</th>
+                            <th>发布人</th>
+                            <th>提交时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="itemContainer">
+                        <foreach name="company_notice" item="vo">
+                            <tr>
+                                <td class="title">{$vo.Title}</td>
+                                <td>{$vo.Publisher}</td>
+                                <td class="time">{$vo.Time}</td>
+                                <td class="dc_operation">
+                                    <button class="button co_edit">编辑</button>
+                                    <button class="button co_delete">删除</button>
+                                </td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+
+                        <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <div class="pagination">
+                                    <a href="#" title="First Page">« First</a><a href="#" title="Previous Page">«
+                                    Previous</a>
+                                    <a href="#" class="number" title="1">1</a>
+                                    <a href="#" class="number" title="2">2</a>
+                                    <a href="#" class="number current" title="3">3</a>
+                                    <a href="#" class="number" title="4">4</a>
+                                    <a href="#" title="Next Page">Next »</a><a href="#" title="Last Page">Last »</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        </tfoot>
+
+                    </table>
+                </div>
+
+                <div class="tab-content default-tab" id="tab2" style="display: none">
+                    <form action="{:U('Index/Announcement/co_publish')}" method="post">
+                        <p>
+                            <label for="title">标题：</label>
+                            <input type="text" name="title" id="title" class="co_title">
+                        </p>
+
+                        <p>
+                            <label for="textArea" style="display:block;margin-bottom: 10px">正文：</label>
+                            <textarea name="content" id="textArea" cols="30" rows="10"></textarea>
+                        </p>
+
+                        <p>
+                            <input type="submit" class="button" value="发布">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

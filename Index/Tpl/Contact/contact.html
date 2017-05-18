@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>联系人管理</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/contact.css"/>
+    <link href="__PUBLIC__/css/jquery.qeditor.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.staticfile.org/font-awesome/3.2.1/css/font-awesome.min.css">
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jPages.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.qeditor.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/myJquery.js"></script>
+
+    <script type="text/javascript">
+
+        var addUrl="{:U('Index/Contact/add')}";
+        var sendUrl="{:U('Index/Contact/send')}";
+        var deleteUrl="{:U('Index/Contact/delete')}";
+        var messageUrl="{:U('Index/Contact/message')}"
+
+    </script>
+
+</head>
+<body>
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+        <div class="currentPage"><i></i>您当前的位置：<a href="../Index/index.html">首页</a> > 联系人管理</div>
+
+        <div class="contact-box">
+            <div class="topMenu">
+                <div class="menuLeft">
+                    <ul>
+                        <li class="menu userAll">
+                            <span class="menuList"><a href="{:U('Index/Contact/contact',array('type'=>'1'))}">全部联系人</a></span>
+                        </li>
+
+                        <li class="menu department">
+                            <span class="menuList">按部门查看</span>
+
+                            <ul class="subMenu">
+                                <foreach name="departments" item="vo">
+                                    <li><a href="{:U('Index/Contact/contact',array('type'=>'2','department'=>$vo[Name]))}">{$vo.Name}</a></li>
+                                </foreach>
+                            </ul>
+                        </li>
+
+                        <li class="menu role">
+                            <span class="menuList">按职位查看</span>
+                            <ul class="subMenu">
+                                <foreach name="role" item="vo">
+                                    <li><a href="{:U('Index/Contact/contact',array('type'=>'3','role'=>$vo[RoleName]))}">{$vo.RoleName}</a></li>
+                                </foreach>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menuRight">
+                    <div class="invitation">添加新的联系人</div>
+                </div>
+            </div>
+
+            <!--联系人列表-->
+            <div class="contactList">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 15%">姓名</th>
+                            <th style="width: 15%">联系电话</th>
+                            <th>邮箱</th>
+                            <th style="width: 15%">部门</th>
+                            <th style="width: 15%">职位</th>
+                            <th style="width: 20%">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemContainer">
+                        <foreach name="contactList" item="vo">
+                            <tr>
+                                <td class="thisName">{$vo.RealName}</td>
+                                <td>{$vo.Telephone}</td>
+                                <td>{$vo.Email}</td>
+                                <td>{$vo.Department}</td>
+                                <td>{$vo.Role}</td>
+                                <td>
+                                    <a class="send-email">发送邮件</a>
+                                    <a class="delete-contact">删除联系人</a>
+                                </td>
+                            </tr>
+                        </foreach>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="5">
+
+                            <div class="pagination"></div>
+                            <!-- End .pagination -->
+                            <div class="clear"></div>
+                        </td>
+                        <td>
+                            <div class="itemsPerPage">
+                                <label>每页显示数目: </label>
+                                <select>
+                                    <option>5</option>
+                                    <option>10</option>
+                                    <option>15</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <!--联系人列表 END-->
+
+
+        <!--申请添加联系人列表-->
+        <div class="content-box">
+            <div class="content-box-header">
+                <h3>联系人添加申请</h3>
+            </div>
+            <div class="content-box-content">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>联系电话</th>
+                        <th>邮箱</th>
+                        <th>部门</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="addList" item="vo">
+                        <tr>
+                            <td>{$vo.RealName}</td>
+                            <td>{$vo.Telephone}</td>
+                            <td>{$vo.Email}</td>
+                            <td>{$vo.Department}</td>
+                            <td>
+                                <a href="{:U('Index/Contact/request',array('isAgree'=>'1','ContactName'=>$vo[RealName]))}" class="contact-agree">同意</a>
+                                <a href="{:U('Index/Contact/request',array('isAgree'=>'2','ContactName'=>$vo[RealName]))}" class="contact-disagree">忽略</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <!--申请添加联系人列表- END-->
+
+    </div>
+</div>
+</body>
+</html>

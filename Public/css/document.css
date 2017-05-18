@@ -1,0 +1,109 @@
+
+/******************公文管理样式**********************/
+
+.main{
+    width: 97%;
+    margin-top: 20px;
+    background: #ffffff;
+    border: solid 1px #ccc;
+    padding: 15px 18px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #ccc;
+}
+
+.main form p{
+    margin-bottom: 5px;
+}
+
+.main form p label{
+    display: block;
+    width: 80px;
+    float: left;
+    text-align: left;
+}
+
+.main form input[type='text']{
+    width: 80%;
+    padding: 3px;
+}
+
+.main form input[type='email']{
+    width: 80%;
+    padding: 3px;
+}
+
+.main form input[type='password']{
+    width: 80%;
+    padding: 3px;
+}
+
+.main form select{
+    width: 25%;
+    padding: 3px;
+}
+
+.main form input.sel-person{
+    width: 54%;
+    padding: 3px;
+}
+
+.main form #content-introduction{
+    width: 81%;
+    height: 150px;
+}
+
+/****查看公文****/
+.document_check{
+    padding: 12px 15px;
+}
+
+.document_check p{
+    width: 100%;
+}
+
+.document_check p label{
+    display: block;
+    width: 80px;
+    float: left;
+}
+.document_check p span{
+    color: #555;
+}
+
+.document_check p .content-introduction{
+    width: 80%;
+    height: 110px;
+    padding: 8px;
+    color: #555;
+    overflow-y: scroll;
+    /*font-size: 12px;*/
+}
+
+.document_check p .file{
+    color: #634819;
+    text-decoration: underline;
+}
+
+.document_check .yijian{
+    width: 80%;
+    height: 110px;
+    padding: 8px;
+    color: #555;
+    overflow-y: scroll;
+}
+
+.document_check .passOrNot{
+    text-align: right;
+}
+
+.pass,.back{
+    margin-right: 20px;
+    padding: 5px;
+    width: 70px;
+}
+
+.pass a,.back a{
+    display: block;
+    width: 100%;
+}
+

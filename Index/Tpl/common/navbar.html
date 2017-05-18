@@ -1,0 +1,63 @@
+<div id="sidebar">
+    <h1 id="sidebar-title">网上办公系统</h1>
+
+    <div id="welcome">
+        Hello,<span id="username"> {$_SESSION['RealName']},</span>上次登录时间：
+        {$_SESSION['LoginTime']}
+        <p>您的身份：<span>{$_SESSION['Role']}</span></p>
+        <p><a href="../Index/setting.html">设置</a> | <a href="{:U('Index/Index/logout')}">退出</a></p>
+    </div>
+    <ul id="main-nav">
+        <li>
+            <a href="#" class="nav-top-item">系统管理</a>
+            <ul class="nav-submenu">
+                <li><a href="{:U('Index/System/department_m')}">部门管理</a></li>
+                <li><a href="{:U('Index/System/employees_m')}">员工管理</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="nav-top-item">联系人管理</a>
+            <ul class="nav-submenu">
+                <li><a href="{:U('Index/Contact/contact')}">我的联系人</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="nav-top-item">公文管理</a>
+            <ul class="nav-submenu">
+                <li><a href="../Document/document_r.html">公文阅读</a></li>
+                <li><a href="../Document/document_w.html">公文撰写</a></li>
+                <li><a href="../Document/document_s.html">公文审核</a></li>
+                <li><a href="../Document/document_m.html">公文归档</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="nav-top-item">公告管理</a>
+            <ul class="nav-submenu">
+                <li><a href="{:U('Index/Announcement/company')}">公司公告</a></li>
+                <li><a href="{:U('Index/Announcement/department')}">部门公告</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="nav-top-item">请假管理</a>
+            <ul class="nav-submenu">
+                <li><a href="{:U('Index/Leave/leave')}">请假申请</a></li>
+                <li><a href="{:U('Index/Leave/leave_short')}">短假审核</a></li>
+                <li><a href="{:U('Index/Leave/leave_long')}">长假审核</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="nav-top-item">留言管理</a>
+            <ul class="nav-submenu">
+                <li><a href="{:U('Index/Message/message')}">留言板</a></li>
+                <li><a href="{:U('Index/Message/manage')}">留言管理</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="nav-top-item">部门文件管理</a>
+            <ul class="nav-submenu">
+                <li><a href="{:U('Index/File/choose_manager')}">指定部门文件管理员</a></li>
+                <li><a href="{:U('Index/File/file_manage')}">文件管理</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

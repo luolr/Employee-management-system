@@ -1,0 +1,261 @@
+/********联系人管理样式*******/
+
+/*****消息样式*****/
+
+.contact-agree{
+    display: block;
+    width: 35%;
+    float: left;
+    color: green;
+}
+
+.contact-disagree{
+    color: #666;
+}
+
+/*****消息样式 END*****/
+
+/*****通讯录头部样式*****/
+.contact-box {
+    width: 100%;
+    margin-top: 30px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .15);
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    background: #555;
+}
+
+.contact-box .topMenu {
+    width: 94%;
+    height: 35px;
+    padding: 0 3%;
+}
+
+/**左侧**/
+ .topMenu .menuLeft {
+    width: 80%;
+    font-size: 12px;
+    float: left;
+}
+
+.menu {
+    position: relative;
+    width: 18%;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.menuList {
+    display: block;
+    width: 90px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.menuList a{
+    color: #ffffff;
+}
+
+.menuList:hover {
+    background: #888;
+    cursor: pointer;
+}
+
+.subMenu {
+    position: absolute;
+    width: 80px;
+    left: 5px;
+    background: #888;
+    margin-top: 5px;
+    display: none;
+    border: solid 1px #ccc;
+    z-index: 100;
+}
+
+.subMenu li {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.subMenu li a {
+    display: block;
+    width: 90px;
+    color: #ffffff;
+}
+
+.subMenu li a:hover {
+    background: #ffffff;
+    color: #000;
+    cursor: pointer;
+}
+
+.active {
+    background: #888;
+}
+
+/**右侧**/
+.menuRight {
+    position: relative;
+    float: left;
+    color: #ffffff;
+    height: 35px;
+    line-height: 30px;
+}
+
+.menuRight .invitation {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    font-size: 13px;
+    width: 100px;
+    padding: 5px 10px 5px 10px !important;
+    text-align: center;
+    background: #459300 url('../images/bg-button-green.gif') top left repeat-x !important;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menuRight .invitation:hover {
+    text-decoration: underline;
+}
+
+.menuRight .invitation:active {
+    padding: 6px 10px 4px 10px !important;
+}
+
+
+    /****联系人列表****/
+
+.contactList {
+    padding: 20px 15px 15px 15px;
+    background: #ffffff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.contactList table {
+    width: 100%;
+}
+
+.contactList table thead th {
+    width: 20%;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.contactList table tbody td {
+    text-align: center;
+}
+
+.contactList table tbody .send-email{
+    float: left;
+    display: block;
+    width: 45%;
+    height: 20px;
+    font-size: 10px;
+    background: #57a000;
+    color: #ffffff;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 10%;
+    cursor:pointer;
+}
+
+.contactList table tbody .send-email:hover{
+    background: #0dc014;
+}
+
+.contactList table tbody .delete-contact{
+    float: left;
+    display: block;
+    width: 44%;
+    height: 20px;
+    font-size: 10px;
+    background: #ff7d59;
+    color: #ffffff;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contactList table tbody .delete-contact:hover{
+    background: #ff513c;
+}
+
+/****添加新的联系人****/
+.add-contact-box{
+    background: #ffffff;
+    padding: 25px 14px 14px 14px;
+    font-size: 14px;
+}
+
+.add-contact-box p{
+    width: 100%;
+    height: 30px;
+}
+
+.add-contact-box i{
+    margin-right: 5px;
+}
+
+.add-contact-box label{
+    float: left;
+    color: #888;
+    display: block;
+    width: 95px;
+}
+
+.add-contact-box input[type="text"]{
+    width: 240px;
+    padding: 2px 3px;
+}
+
+.add-contact-box button{
+    width: 80px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 25px;
+}
+
+/****发送邮件****/
+
+.send-email-box {
+    background: #ffffff;
+    z-index: 1001;
+    padding: 10px 16px 5px 16px;
+    overflow: auto;
+    font-size: 14px;
+}
+
+.send-email-box p{
+    height: 28px;
+}
+
+.send-email-box label{
+    float: left;
+    display: block;
+    width: 60px;
+}
+
+.send-email-box input[type='text']{
+    padding: 2px 3px;
+    width: 330px;
+}
+
+.send-email-box select{
+    width: 140px;
+    padding: 2px 3px;
+}
+
+.send-email-box input[type='submit']{
+    width: 65px;
+}
+
+
+
+
+

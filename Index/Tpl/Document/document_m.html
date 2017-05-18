@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>公文归档</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/document.css"/>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jPages.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/myJquery.js"></script>
+
+</head>
+<body>
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+        <div class="currentPage"><i></i>您当前的位置：<a href="../Index/index.html">首页</a> > 公文归档</div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+
+                <h3>公文</h3>
+
+            </div>
+            <div class="content-box-content">
+
+                <table>
+
+                    <thead>
+                    <tr>
+                        <th>公文编号</th>
+                        <th>公文标题</th>
+                        <th>主送目标</th>
+                        <th>抄送目标</th>
+                        <th>状态</th>
+                        <th>审核人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="itemContainer">
+                    <foreach name="result" item="vo">
+                        <tr>
+                            <td class="Number">{$vo.Number}</td>
+                            <td>{$vo.Title}</td>
+                            <td>{$vo.Target1}</td>
+                            <td>{$vo.Target2}</td>
+                            <td>{$vo.State}</td>
+                            <td>{$vo.Checker}</td>
+                            <td class="dc_operation">
+                                <button class="button chakan">查看</button>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                <div class="pagination">
+                                    <a href="#" title="First Page">« First</a><a href="#" title="Previous Page">«
+                                    Previous</a>
+                                    <a href="#" class="number" title="1">1</a>
+                                    <a href="#" class="number" title="2">2</a>
+                                    <a href="#" class="number current" title="3">3</a>
+                                    <a href="#" class="number" title="4">4</a>
+                                    <a href="#" title="Next Page">Next »</a><a href="#" title="Last Page">Last »</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tfoot>
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

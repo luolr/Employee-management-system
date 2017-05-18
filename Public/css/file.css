@@ -1,0 +1,69 @@
+/***文件管理***/
+table{
+    table-layout: fixed;
+}
+
+#itemContainer td{
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+thead tr th:nth-of-type(1){
+    width: 8%;
+}
+
+thead tr th:nth-of-type(2){
+    width: 30%;
+}
+
+thead tr th:nth-of-type(3){
+    width: 10%;
+}
+
+thead tr th:nth-of-type(4){
+    width: 10%;
+}
+
+thead tr th:nth-of-type(5){
+    width: 17%;
+}
+
+thead tr th:nth-of-type(6){
+    width: 15%;
+}
+
+.dc_operation a{
+    margin-right: 10px;
+}
+
+.dc_operation a{
+    text-decoration: underline;
+}
+
+#tab2 form p{
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+#tab2 form label{
+    float: left;
+    display: block;
+    width: 70px;
+}
+
+#tab2 form input[type='text']{
+    width: 60%;
+    padding: 2px;
+}
+
+#tab2 form textarea{
+    width: 60%;
+    height: 150px;
+    vertical-align: top;
+    padding: 3px 5px;
+}
+
+#tab2 form input[type='submit']{
+    width: 70px;
+    margin-top: 10px;
+    margin-left: 5px;
+}

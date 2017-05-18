@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/jPages.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/animate.css"/>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.qeditor.css">
+    <script src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script src="__PUBLIC__/js/jquery.qeditor.js"></script>
+    <script src="__PUBLIC__/js/layer.js"></script>
+    <script src="__PUBLIC__/js/jPages.js"></script>
+    <script src="__PUBLIC__/js/myJquery.js"></script>
+
+    <script language="JavaScript">
+
+        setInterval("document.getElementById('currentTime').innerHTML=" +
+                "new Date().toLocaleString()+" +
+                "' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+
+        var singularUrl = '{:U("Index/Index/singular")}';
+        var applyUrl = "{:U('Index/Index/plural')}";
+        var readUrl = "{:U('Index/Index/read')}";
+    </script>
+
+</head>
+<body>
+
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+        <h1>欢迎回来 {$_SESSION['realname']}</h1>
+
+        <div id="currentTime"></div>
+
+        <div class="content-box column-left">
+
+            <div class="content-box-header">
+
+                <h3 style="cursor: s-resize;"><b>公司公告</b></h3>
+
+            </div>
+            <!-- End .content-box-header -->
+
+            <div class="content-box-content" style="display: block;">
+
+                <div class="tab-content default-tab" style="display: block;">
+
+                    <h5 style="text-align: center">{$company_notice_title}</h5>
+
+                    {$company_notice_content}
+
+                    <p style="text-align: right">
+                        {$company_notice_time}</p>
+
+                </div>
+                <!-- End #tab3 -->
+
+            </div>
+            <!-- End .content-box-content -->
+
+        </div>
+
+        <div class="content-box column-right">
+
+            <div class="content-box-header">
+                <!-- Add the class "closed" to the Content box header to have it closed by default -->
+
+                <h3 style="cursor: s-resize;"><b>部门公告</b></h3>
+
+            </div>
+            <!-- End .content-box-header -->
+
+            <div class="content-box-content" style="display: block;">
+
+                <div class="tab-content default-tab" style="display: block;">
+
+                    <h5 style="text-align: center">{$department_notice_title}</h5>
+
+                    {$department_notice_content}
+
+                    <p style="text-align: right">
+                        {$department_notice_time}</p>
+
+                </div>
+                <!-- End #tab3 -->
+
+            </div>
+            <!-- End .content-box-content -->
+
+        </div>
+
+        <div class="content-box email">
+            <div class="content-box-header email-header">
+
+                <h3 style="cursor: s-resize;">邮箱</h3>
+
+                <ul class="content-box-tabs">
+                    <li id="one"><a href="#tab1" class="default-tab current" style="text-decoration: none;">收信</a></li>
+                    <li id="two"><a href="#tab2" class="" style="text-decoration: none;">写信</a></li>
+                </ul>
+
+
+            </div>
+            <div class="content-box-content">
+
+                <div class="tab-content default-tab" id="tab1">
+
+                    <table>
+
+                        <thead>
+                        <tr>
+                            <th><input class="check-all" type="checkbox"></th>
+                            <th>主题</th>
+                            <th>收件人</th>
+                            <th>发件人</th>
+                            <th>类型</th>
+                            <th>时间</th>
+                            <th>操作</th>
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="itemContainer">
+                        <foreach name="myEmail" item="vo">
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{$vo.Topic}</td>
+                                <td>{$vo.Recipient}</td>
+                                <td class="sender">{$vo.Sender}</td>
+                                <td>{$vo.Type}</td>
+                                <td class="time">{$vo.Time}</td>
+                                <td>
+                                    <!-- Icons -->
+                                    <i class="img_read"></i>
+                                    <i class="img_reply"></i>
+                                    <i class="img_delete"></i>
+                                    <!--<a href="#" title="回信"><img src="__PUBLIC__/images/icons/pencil.png" alt="回信"></a>-->
+                                    <!--<a href="#" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete"></a>-->
+                                    <!--<a href="#" title="Edit Meta"><img src="__PUBLIC__/images/icons/hammer_screwdriver.png"-->
+                                                                       <!--alt="Edit Meta"></a>-->
+                                </td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+
+                        <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <div class="bulk-actions align-left">
+                                    <select name="dropdown">
+                                        <option value="option1">选择一个操作...</option>
+                                        <option value="option2">删除</option>
+                                    </select>
+                                    <button class="button" id="email_apply">应用于勾选项</button>
+                                </div>
+
+                                <div class="pagination"></div>
+                                <!-- End .pagination -->
+                                <div class="clear"></div>
+                            </td>
+                            <td>
+                                <div class="itemsPerPage">
+                                    <label>每页显示数目: </label>
+                                    <select>
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+
+                    </table>
+
+                </div>
+                <!-- End #tab1 -->
+
+                <div class="tab-content" id="tab2" style="display: none;">
+
+                    <form action="{:U('Index/Index/sendEmail')}" method="post">
+
+                        <p>
+                            <label for="email-recipient">收件人：</label>
+                            <input type="text" name="recipient" id="email-recipient" class="required" required/>
+                        </p>
+
+                        <p>
+                            <label for="email-topic">主&nbsp;&nbsp;&nbsp;题：</label>
+                            <input type="text" name="topic" id="email-topic" class="required" required/>
+                        </p>
+
+                        <p>
+                            <label for="email-type">类&nbsp;&nbsp;&nbsp;型：</label>
+                            <select name="type" id="email-type">
+                                <option value="option1">普通邮件</option>
+                                <option value="option2">重要邮件</option>
+                            </select>
+                        </p>
+
+                        <hr/>
+
+
+                        <label for="textArea">正&nbsp;&nbsp;&nbsp;文：</label>
+                        <textarea id="textArea" name="content"></textarea>
+
+                        <p>
+                            <input class="button" type="submit" id="submit" value="发送">
+                        </p>
+
+                        <div class="clear"></div>
+
+                    </form>
+
+                </div>
+                <!-- End #tab2 -->
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

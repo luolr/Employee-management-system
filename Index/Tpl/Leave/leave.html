@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>请假申请</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/leave.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/jPages.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/animate.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.datetimepicker.css"/>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jPages.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.datetimepicker.full.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/myJquery.js"></script>
+
+</head>
+<body>
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+        <div class="currentPage"><i></i>您当前的位置：<a href="../Index/index.html">首页</a> > 请假申请</div>
+
+        <div class="main">
+            <form action="{:U('Leave/application')}" method="post">
+                <p>
+                    <label>*&nbsp;&nbsp;申&nbsp;&nbsp;请&nbsp;&nbsp;人：</label>
+                    <span>{$_SESSION['RealName']}&nbsp;</span>
+                </p>
+                <p>
+                    <label>*&nbsp;&nbsp;所属部门：</label>
+                    <span>{$_SESSION['Department']}&nbsp;</span>
+                </p>
+                <p>
+                    <label>*&nbsp;&nbsp;请假类型：</label>
+                    <select name="type">
+                        <option value="1">病假 &nbsp;Sick Leave</option>
+                        <option value="2">事假 &nbsp;Others</option>
+                        <option value="3">出差 &nbsp;Work Leave</option>
+                        <option value="4">婚假 &nbsp;Marriage Leave</option>
+                        <option value="5">产假 &nbsp;Maternity Leave</option>
+                        <option value="6">年假 &nbsp;Annual Leave</option>
+                        <option value="7">丧假 &nbsp;Funeral leave</option>
+                    </select>
+                </p>
+                <p>
+                    <label>*&nbsp;&nbsp;请假天数：</label>
+                    <select name="days">
+                        <option value="1">短假 &nbsp;Less Than 5 Days</option>
+                        <option value="2">长假 &nbsp;More Than 5 Days</option>
+                        <option value="3">重要 &nbsp;Important Item</option>
+                    </select>
+                </p>
+                <p>
+                    <label>*&nbsp;&nbsp;开始时间：</label>
+                    <input type="text" name="start" id="startTime" class="datetimepicker required"/>
+                </p>
+                <p>
+                    <label>*&nbsp;&nbsp;结束时间：</label>
+                    <input type="text" name="end" id="endTime" class="datetimepicker required"/>
+                </p>
+                <p>
+                    <label>*&nbsp;&nbsp;请假理由：</label>
+                    <textarea name="reason" class="required"></textarea>
+                </p>
+                <p>
+                    <label>*&nbsp;&nbsp;请假规则：</label>
+                    <a id="tiaokuan">《员工请假条款》</a>
+                </p>
+                <p style="margin-left: 10px">
+                    <input type="submit" value="提交申请" class="button"/>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.datetimepicker').datetimepicker({lang:'ch'});
+    var tiaokuan ='<p>一、目的：<o:p></o:p></p><p>为规范公司考勤管理制度，加强员工组织纪律性，维持公司正常工作秩序，特制定本规定。<o:p></o:p></p><p>二、适用范围：<o:p></o:p></p><p>1、公司生产车间和仓库等一线员工及临时工适用本制度第一条至第四条、第五条的2、3项、第六条和第七条。<o:p></o:p></p><p>2、各管理部门、市场业务部门人员及生产部、仓库等主管以上人员（合同制员工及处于试用期的员工）适用全部条款。<o:p></o:p></p><p>&nbsp;</p><p>三、请假程序：<o:p></o:p></p><p>1、公司员工请假，需提前向部门负责人或部门分管领导递交书面申请，填写《请假单》，交行政人事部备案，否则请假不予生效；员工休假期满后，须及时到部门负责人或部门分管领导处销假，否则按旷工处理。<o:p></o:p></p><p>2、员工请假应提前办理请假手续，填写《请假单》。因急事或身体不适临时请假，应在上班前电话告知部门主管，返岗后补办请假手续，否则按旷工处理。<o:p></o:p></p><p>四、请假审批权限：<o:p></o:p></p><p>1、各管理部门人员和市场业务部门人员3天（含）以内的请假，由部门负责人审批；请假3天以上、7天（含）以内的，经部门负责人审核同意后，须报部门分管领导审批；请假7天以上须经总经理批准。请假申请经相关领导审批同意后，请假员工须在休假前持《请假单》及时到行政人事部备案，否则请假不予生效。<o:p></o:p></p><p>2、各管理部门及市场业务部门负责人请假3天（含）以内，由部门分管领导审批，请假3天以上须报经总经理批准，并须在休假前及时到行政人事部备案。<o:p></o:p></p><p>3、生产部门员工请假在5天（含）以内的，由车间主管负责审批；请假在5天以上、15天（含）以内的，经车间主管审核同意后，由生产部经理负责审批；请假15天以上，须报经部门分管领导（总经理）批准。员工请假经审批同意后，须在休假前持《请假单》及时到行政人事部备案，否则请假不予生效。<o:p></o:p></p><p>4、生产部主管请假在3天（含）以内的，由生产部经理负责审批；请假3天以上，须报经部门分管领导（总经理）批准；生产部经理请假，须报部门分管领导（总经理）审批，并在休假前持《请假单》到行政人事部备案。<o:p></o:p></p><p>五、请假类别<o:p></o:p></p><p>1、病假<o:p></o:p></p><p>员工请病假应持区级以上医疗单位（或公司指定就诊医院）出具的诊断证明和病假单办理请假手续。休病假期间，公司按员工基本工资的60%发放工资。休病假半年未能正常上班者，公司将予办理病退离职手续。如国家或地方法律法规另有规定的，则按相关法律规定执行。<o:p></o:p></p><p>2、事假<o:p></o:p></p><p>员工请事假必须说明请假事由，填写《请假单》，按请假申请程序和审批权限经批准后方可离岗。事假的最小请假单位为半天，事假为无薪假（不享受工资、补贴及奖金）；请假期间，按事假实际天数全额扣除相应天数的工资，年累计事假30天（含）以上者，不享受年终奖待遇；员工连续请事假满30天者，公司将与其解除劳动关系。<o:p></o:p></p><p>3、工伤假<o:p></o:p></p><p>因工负伤需住院的员工，须在指定医院就医，由该医院出具证明，确定其休息时间。工伤假期间的员工工资福利待遇，按国家及上海地方政府有关政策及规定执行。<o:p></o:p></p><p>&nbsp;</p><p>4、婚假<o:p></o:p></p><p>员工试用期满且结婚登记日在本公司入职后的可以享受婚假。员工休婚假，须本人凭结婚登记证，并提前一个月提出申请，公司给予婚假3天；男女双方若符合晚婚条件（男25周岁，女23周岁），除享受国家法定3天婚假外，另加晚婚假7天，休假时间连续计算（包括双休日）。婚假应在结婚登记之日后半年内一次性休完，逾期不休作自动放弃。婚假期间的员工工资福利待遇不变。<o:p></o:p></p><p>5、产假及哺乳假<o:p></o:p></p><p>女职工在合同期内生育，其产假及哺乳假按国家及地方计划生育有关政策执行。<o:p></o:p></p><p>6、丧假<o:p></o:p></p><p>员工的直系亲属（父母、配偶、子女、岳父母、公婆）亡故可享有3天丧假；员工的近亲属（祖父母、外祖父母、兄弟姐妹及本人直接供养的家属）亡故可享有1天丧假；丧假期间的员工工资福利待遇不变。<o:p></o:p></p><p>7、年休假<o:p></o:p></p><p>根据国家规定，职工累计工作已满1年不满10年的，年休假5天；已满10年不满20年的，年休假10天；已满20年的，年休假15天，休假期间的员工工资福利待遇不变（聘用及临时用工人员除外）。根据公司生产经营的实际情况，员工的年休假原则上在每年的春节前后由公司统一进行安排。员工如不服从公司统一休假安排的，作自动放弃休假处理；员工不遵守放假及上班时间规定，不按要求准时上班的，将按旷工或解除劳动关系处理。<o:p></o:p></p><p>六、其它规定<o:p></o:p></p><p>1、为维护员工身心健康，使其以更好的精神面貌投入工作，各管理部门、市场业务部门人员及生产部、仓库等主管以上人员原则上每周休息不少于1天。为确保公司正常的生产经营秩序，员工每周休息日在月度内不得进行累积休息；同时，为体现企业对员工的人性化管理，因工作原因造成休息日（本休）应休未休的，每月可以积休1天在当季内换休使用，逾期作自动放弃，每季度末累计积休天数不得超过3天，；公司有权根据生产经营需要以小时、半个工作日、1个工作日为单位合理安排员工提前使用其积休，员工应予理解和支持。生产部门其他员工可根据生产经营任务安排和计件工作制实行情况，参照本规定或按另行制定的具体实施办法执行。<o:p></o:p></p><p>2、员工必须做到事前请假，事后销假。因事不能上班时，必须提前1天履行书面请假手续，如遇特殊情况事先无法办理请假手续的，须以电话向部门主管请示并得到批准，事后立即补办手续。如未办手续擅自离开岗位，或假期届满仍未销假、续假者，均以旷工论处，旷工1天扣除3天工资，连续旷工3天或一年累计旷工7天按开除处理。<o:p></o:p></p><p>3、各部门负责人、主管及员工请假前均须事先落实本人请假期间的工作代理人，并提前做好工作交接，以确保其岗位及负责的相关工作正常开展。<o:p></o:p></p><p>4、员工请假、调休以半天（4小时工作时间）起算，按照先加班后调休的原则，在当月完成，不得累计。一年请假累计不得超过30天（病假、工伤除外）。对于请假超过30天的员工，将作为年度是否给予员工加薪、晋升的重要考核依据。<o:p></o:p></p><p>七、本制度自公布之日起试行，由公司行政人事部负责解释、修订和完善。<o:p></o:p></p>'
+</script>
+</body>
+</html>

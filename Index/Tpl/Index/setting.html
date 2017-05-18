@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>修改个人信息</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/css/document.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <script src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script src="__PUBLIC__/js/layer.js"></script>
+    <script src="__PUBLIC__/js/jPages.js"></script>
+    <script src="__PUBLIC__/js/myJquery.js"></script>
+
+
+</head>
+<body>
+
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+
+        <div class="currentPage"><i></i>您当前的位置：<a href="index.html">首页</a> > 修改个人信息</div>
+
+        <div class="main">
+
+            <form action="{:U('Index/System/saveinfo')}" method="post">
+                <p>
+                    <label>联系电话：</label>
+                    <input type="text" name="telephone" class="required" value="{$_SESSION['Telephone']}" required/>
+                </p>
+                <p>
+                    <label>个人邮箱：</label>
+                    <input type="email" name="email" class="required" value="{$_SESSION['Email']}" required/>
+                </p>
+                <p>
+                    <input type="submit" value="保存" class="button"/>
+                </p>
+            </form>
+
+        </div>
+
+        <div class="main">
+
+            <form action="{:U('Index/System/changePwd')}" method="post">
+                <p>
+                    <label>旧的密码：</label>
+                    <input type="password" name="oldPassword" id="oldPassword" class="required" required/>
+                </p>
+                <p>
+                    <label>新的密码：</label>
+                    <input type="password" name="newPassword" id="newPassword" class="required" required/>
+                </p>
+                <p>
+                    <label>确认新密码：</label>
+                    <input type="password" name="againPassword" id="againPassword" class="required" required/>
+                </p>
+                <p>
+                    <input type="submit" value="保存" class="button"/>
+                </p>
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

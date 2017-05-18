@@ -1,0 +1,198 @@
+/*
+*留言板的样式设计
+*/
+
+.message-box{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.message-box .message{
+    width: 98%;
+    height: auto;
+    padding: 10px;
+    background: #f0f0f0;
+    float: left;
+    border-bottom: dashed 1px #ccc;
+}
+
+.message-box .message:hover{
+    margin-top: 2px;
+    background: #f7f7f7;
+}
+
+.message-box .message i img{
+    float: left;
+    width: 6%;
+    height: 6%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.message-box .message p{
+    line-height: 24px;
+}
+
+.message-box .message p img{
+    width: 24px;
+}
+
+.message-box .message article{
+    float: left;
+    width: 92%;
+}
+
+.message-box .message p{
+    float: left;
+    display: block;
+    text-indent: 2%;
+}
+
+.message-box .message .info{
+    width: 99%;
+    text-align: right;
+    color: #888;
+}
+
+.message-box .message .info span{
+    margin-right: 1%;
+}
+
+/****我要留言样式****/
+.content-box{
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.comment {
+    width: 95%;
+    position: relative;
+    margin: 30px 0 10px 0;
+    float: left;
+}
+
+.comment label{
+    font-size: 14px;
+    line-height: 28px;
+    margin: 0 0 5px 25px;
+}
+
+.message-title{
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border: solid 1px #ccc;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 2%;
+    font-size: 16px;
+    text-align: center;
+    color: #888;
+    background: #fff;
+}
+
+textarea#saytext{
+    width: 100%;
+    padding: 5px 8px;
+    font-size: 14px;
+    color: #555555;
+    border-radius: 5px;
+    outline: none;
+    height: 200px;
+    margin-left: 1%;
+    overflow-y: scroll;
+    border-color: #ccc;
+    resize:none;
+}
+
+.comment h3 {
+    height: 28px;
+    line-height: 28px
+}
+
+.com_form {
+    width: 100%;
+    position: relative
+}
+
+.input {
+    width: 99%;
+    height: 60px;
+    border: 1px solid #ccc
+}
+
+.com_form p {
+    height: 28px;
+    line-height: 28px;
+    position: relative
+}
+
+span.emotion {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 20px;
+    background: url(../images/icon.gif) no-repeat 2px 2px;
+    line-height: 20px;
+    padding-left: 25px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+span.emotion:hover {
+    background-position: 2px -28px
+}
+
+.qqFace {
+    margin-top: 4px;
+    background: #fff;
+    padding: 2px;
+    border: 1px #dfe6f6 solid;
+}
+
+.qqFace table td {
+    padding: 0;!important;
+}
+
+.qqFace table td img {
+    cursor: pointer;
+    border: 1px #fff solid;
+}
+
+.qqFace table td img:hover {
+    border: 1px #0066cc solid;
+}
+
+input#message-submit{
+    float: right;
+    width: 11%;
+}
+
+
+/****** 留言管理 ******/
+table{
+    table-layout: fixed;
+}
+
+#itemContainer td{
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+thead tr th:nth-of-type(1){
+    width: 15%;
+}
+
+thead tr th:nth-of-type(2){
+    width: 55%;
+}
+
+thead tr th:nth-of-type(3){
+    width: 20%;
+}
+
+thead tr th:nth-of-type(4){
+    width: 10%;
+}

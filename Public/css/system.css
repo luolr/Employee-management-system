@@ -1,0 +1,71 @@
+/***系统管理***/
+form i{
+    color: #FF0000;
+    margin-right: 3px;
+}
+
+form label{
+    padding-right: 8px;
+    width: 75px;
+    text-align: right;
+}
+
+form input[type="text"]{
+    width: 80%;
+    padding: 1px 3px;
+    font-size: 13px;
+}
+
+form select{
+    width: 20%;
+    padding: 3px;
+}
+
+form input[type="submit"]{
+    width: 70px;
+    height: 28px;
+}
+
+.editBox{
+    padding: 15px;
+    font-size: 13px;
+}
+
+.editBox p{
+    width: 275px;
+}
+
+.editBox label{
+    padding-right: 8px;
+    width: 75px;
+    text-align: right;
+}
+
+.editBox input{
+    width: 200px;
+    padding: 1px 3px;
+    font-size: 13px;
+}
+
+.editBox select{
+    padding: 2px;
+    width: 200px;
+}
+
+.editBox button{
+    width: 50px;
+    height: 28px;
+    float: right;
+}
+/*部门管理*/
+
+/*部门管理-END*/
+
+
+/*员工管理*/
+
+/*员工管理-END*/
+
+
+
+/***系统管理 END***/

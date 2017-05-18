@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言管理</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/jPages.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/message.css"/>
+    <link href="http://cdn.staticfile.org/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/jquery.qeditor.css" rel="stylesheet">
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jPages.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/myJquery.js"></script>
+
+</head>
+<body>
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+        <div class="currentPage"><i></i>您当前的位置：<a href="../Index/index.html">首页</a> > 留言管理</div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+
+                <h3>留言</h3>
+
+            </div>
+            <div class="content-box-content">
+
+                <table>
+
+                    <thead>
+                    <tr>
+                        <th>发表人</th>
+                        <th>内容</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="itemContainer">
+                    <foreach name="messages" item="vo">
+                        <tr>
+                            <td id="realName">{$vo.Speaker}</td>
+                            <td>{$vo.Content}</td>
+                            <td id="time">{$vo.Time}</td>
+                            <td class="dc_operation">
+                                <button class="button message_delete">删除</button>
+                            </td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <div class="pagination">
+                                <a href="#" title="First Page">« First</a><a href="#" title="Previous Page">«
+                                Previous</a>
+                                <a href="#" class="number" title="1">1</a>
+                                <a href="#" class="number" title="2">2</a>
+                                <a href="#" class="number current" title="3">3</a>
+                                <a href="#" class="number" title="4">4</a>
+                                <a href="#" title="Next Page">Next »</a><a href="#" title="Last Page">Last »</a>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="itemsPerPage">
+                                <label>每页显示数目: </label>
+                                <select>
+                                    <option>5</option>
+                                    <option>10</option>
+                                    <option>15</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tfoot>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

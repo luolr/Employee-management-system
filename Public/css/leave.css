@@ -1,0 +1,47 @@
+.main{
+    width: 97%;
+    margin-top: 20px;
+    background: #ffffff;
+    border: solid 1px #ccc;
+    padding: 15px 18px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #ccc;
+}
+
+.main form p{
+    margin-bottom: 5px;
+}
+
+.main form p select{
+    width: 21%;
+    padding: 2px 4px;
+}
+
+.main form p label{
+    display: block;
+    width: 90px;
+    float: left;
+    text-align: left;
+}
+
+.main form input[type='text']{
+    width: 20%;
+    padding: 2px;
+}
+
+.main form p textarea{
+    vertical-align: top;
+    width: 40%;
+    height: 150px;
+    padding: 4px 5px;
+    font-size: 13px;
+}
+
+.main form p a{
+    font: 12px/1.5 "microsoft yahei", Regular, Helvetica, Arial, "ËÎÌו", sans-serif;
+    cursor: pointer;
+}
+
+.tiaokuan_box{
+    padding: 15px;
+}

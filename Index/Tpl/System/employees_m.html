@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>员工管理</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/system.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/jPages.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/animate.css"/>
+    <script src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+    <script src="__PUBLIC__/js/layer.js"></script>
+    <script src="__PUBLIC__/js/jPages.js"></script>
+    <script src="__PUBLIC__/js/jquery.qeditor.js"></script>
+    <script src="__PUBLIC__/js/myJquery.js"></script>
+
+
+</head>
+<body>
+
+<div id="body-wrapper">
+    <include file="common:navbar" />
+    <div id="main-content">
+
+        <div class="currentPage"><i></i>您当前的位置：<a href="../Index/index.html">首页</a> > 员工管理</div>
+
+        <div class="content-box">
+            <div class="content-box-header email-header">
+
+                <h3 style="cursor: s-resize;">员工</h3>
+
+                <ul class="content-box-tabs">
+                    <li id="one"><a href="#tab1" class="default-tab current" style="text-decoration: none;">列表</a></li>
+                    <li id="two"><a href="#tab2" class="" style="text-decoration: none;">新增</a></li>
+                </ul>
+
+
+            </div>
+            <div class="content-box-content">
+
+                <div class="tab-content default-tab" id="tab1">
+
+                    <table>
+
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>真实姓名</th>
+                            <th>联系电话</th>
+                            <th>电子邮件</th>
+                            <th>部门</th>
+                            <th>角色</th>
+                            <th>操作</th>
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="itemContainer">
+                        <foreach name="employees" item="vo" key="key">
+                            <tr>
+                                <td>{$key+1}</td>
+                                <td id="name">{$vo.RealName}</td>
+                                <td id="telephone">{$vo.Telephone}</td>
+                                <td id="email">{$vo.Email}</td>
+                                <td id="department">{$vo.Department}</td>
+                                <td id="role">{$vo.Role}</td>
+                                <td class="dc_operation">
+                                    <button class="button system_em_edit">编辑</button>
+                                    <button class="button system_em_delete">删除</button>
+                                </td>
+                            </tr>
+                        </foreach>
+                        </tbody>
+
+                        <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <div class="pagination"></div>
+                            </td>
+                            <td>
+                                <div class="itemsPerPage">
+                                    <label>每页显示数目: </label>
+                                    <select>
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+
+                    </table>
+
+                </div>
+
+                <div class="tab-content default-tab" id="tab2" style="display: none">
+
+                    <form action="{:U('Index/System/addEmployee')}" method="post">
+                        <p>
+                            <label><i>*</i>真实姓名:</label>
+                            <input type="text" id="realName" name="name" class="required" required>
+                        </p>
+                        <p>
+                            <label>联系电话:</label>
+                            <input type="text" name="telephone">
+                        </p>
+                        <p>
+                            <label>电子邮件:</label>
+                            <input type="text" name="email">
+                        </p>
+                        <p id="role">
+                            <label><i>*</i>角色分配:</label>
+                            <select name="role">
+                                <option value="0">请选择一个角色</option>
+                                <option value="1">总经理</option>
+                                <option value="2">总经理秘书</option>
+                                <option value="3">部门经理</option>
+                                <option value="4">普通员工</option>
+                            </select>
+                        </p>
+                        <p class="department" style="display: none">
+                            <label><i>*</i>所属部门:</label>
+
+                            <select name="department">
+                                <option value="0">请选择员工所属部门</option>
+                                <foreach name="department" item="vo" key="key">
+                                    <option value="{$vo.Name}">{$vo.Name}</option>
+                                </foreach>
+                            </select>
+
+                        </p>
+                        <p>
+                            <label><i>*</i>用户名:</label>
+                            <input type="text" name="userName" class="required" required>
+                        </p>
+                        <p>
+                            <label><i>*</i>默认密码:</label>
+                            <input type="text" name="password" class="required" required>
+                        </p>
+                        <p>
+                            <input type="submit" class="button" value="保存">
+                        </p>
+                    </form>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
