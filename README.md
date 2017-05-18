@@ -4,9 +4,9 @@
 
 本系统是基于ThinkPHP框架的一个（简陋的）办公系统，是我读书的时候写的(too young)。
 
-- ThinkPHP3.1.3完整版(http://www.thinkphp.cn/down/338.html)
-- jQuery1.8.3(http://jquery.com/download/)
-- Mysql数据库(https://www.mysql.com/)
+- [ThinkPHP3.1.3完整版](http://www.thinkphp.cn/down/338.html)
+- [jQuery1.8.3](http://jquery.com/download/)
+- [Mysql](https://www.mysql.com/)
 
 
 # 使用
